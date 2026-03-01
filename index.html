@@ -1,26 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sample Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham B | DevOps Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Animated Background Blobs */
+body::before, body::after{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+    animation:float 12s infinite alternate ease-in-out;
+}
+
+body::before{
+    background:#00f5ff;
+    top:-100px;
+    left:-100px;
+}
+
+body::after{
+    background:#ff00c8;
+    bottom:-100px;
+    right:-100px;
+}
+
+@keyframes float{
+    from{transform:translateY(0px);}
+    to{transform:translateY(80px);}
+}
+
+/* Navbar */
+nav{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter: blur(12px);
+    background:rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
+
+nav h1{
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    position:relative;
+    transition:0.3s ease;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#00f5ff;
+    transition:0.3s ease;
+}
+
+nav ul li a:hover{
+    color:#00f5ff;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* Sections */
+section{
+    min-height:100vh;
+    padding:120px 8% 80px 8%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+/* Glass Card */
+.glass{
+    background:rgba(255,255,255,0.07);
+    border-radius:20px;
+    padding:50px;
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    transition:0.4s ease;
+}
+
+.glass:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 40px rgba(0,255,255,0.3);
+}
+
+/* Hero */
+.hero h2{
+    font-size:48px;
+    font-weight:700;
+}
+
+.hero span{
+    color:#00f5ff;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:18px;
+    opacity:0.9;
+    max-width:700px;
+}
+
+.btn{
+    margin-top:30px;
+    padding:12px 28px;
+    border-radius:30px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    background:linear-gradient(90deg,#00f5ff,#ff00c8);
+    color:#fff;
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #00f5ff;
+}
+
+/* Skills Grid */
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.skill-card{
+    padding:30px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    transition:0.4s ease;
+    cursor:pointer;
+}
+
+.skill-card:hover{
+    transform:translateY(-12px) scale(1.05);
+    background:rgba(255,255,255,0.12);
+}
+
+/* Footer */
+footer{
+    padding:30px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.05);
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+</style>
 </head>
+
 <body>
-    <header><h1>Your Name</h1></header>
-    <nav><a href="#about">About</a> | <a href="#projects">Projects</a> | <a href="#contact">Contact</a></nav>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Passionate developer creating simple web layouts.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Example: Tribute Page</p>
-            <p>Example: E-commerce Layout</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>GitHub: <a href="https://github.com" target="_blank">Username</a></p>
-        </section>
-    </main>
+
+<nav>
+    <h1>Shubham B</h1>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home">
+    <div class="glass hero">
+        <h2>Hello, I'm <span>Shubham</span></h2>
+        <p>Salesforce DevOps Engineer | Automation Enthusiast | Jenkins & Git Specialist | Long-term Wealth Builder | Creator of Desi Bullionaire</p>
+        <button class="btn" onclick="scrollToSection('contact')">Let's Connect</button>
+    </div>
+</section>
+
+<section id="about">
+    <div class="glass">
+        <h2>About Me</h2>
+        <p style="margin-top:20px; max-width:800px;">
+            I am a Salesforce DevOps Engineer based in India with strong expertise in managing feature branches,
+            automating deployments using Jenkins, and streamlining CI/CD workflows. 
+            I specialize in handling complex metadata merges, release management, and optimizing DevOps pipelines.
+            <br><br>
+            Beyond tech, I am passionate about long-term investing, gold strategies, and wealth building. 
+            I also run a finance-focused YouTube channel where I simplify investment concepts for Indian investors.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="glass">
+        <h2>Core Expertise</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Salesforce DevOps</h3>
+                <p>Branch management, metadata handling, release workflows.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Jenkins Automation</h3>
+                <p>Parameterized pipelines, SIT/Prod deployments.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Git & Version Control</h3>
+                <p>Feature branching, PR reviews, conflict resolution.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Process Optimization</h3>
+                <p>Streamlining manual release tasks into automation.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Investment Research</h3>
+                <p>Gold, ETFs, Mutual Funds, long-term portfolio strategy.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Content Creation</h3>
+                <p>Finance education via YouTube & digital platforms.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="glass">
+        <h2>Let's Build Something Great</h2>
+        <p style="margin-top:20px;">
+            Interested in DevOps automation, release management optimization,
+            or collaboration opportunities?
+        </p>
+        <button class="btn" style="margin-top:25px;">Email Me</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 Shubham B | Designed with Modern Glassmorphism UI
+</footer>
+
+<script>
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
+
 </body>
 </html>
